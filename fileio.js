@@ -25,7 +25,7 @@ exports.out = function(output, callback){
     });
     
 	var result = output.join('\n');
-	fs.writeFile(process.argv[3] || "Output.out", result, 'utf8', function(err){
+	fs.writeFile(process.argv[3] || process.argv[2]+".out" || "Output.out", result, 'utf8', function(err){
 		if(err) throw err;
 		console.log("\n\n\nSuccessfully Generated results\n\n\n");
 		console.log(result);
